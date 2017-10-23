@@ -1,5 +1,5 @@
 {
-  "name": "Create a cognitive news alerting app",
+  "name": "Cognitive news alerting app",
   "description": "Mine recent news articles to send custom alerts about a product, brand, or price changes",
   "thumbnailURL": "blueprint/thumbnail.svg",
   "appIconURL": "blueprint/appicon.svg",
@@ -19,10 +19,10 @@
     "generator-starterkit-content-downloader": {
       "registry": "https://npm-registry.whitewater.ibm.com",
       "scope": "@arf",
-      "version": "latest"
+      "version": "0.0.x"
     },
     "generator-ibm-cloud-enablement": {
-      "version": "latest"
+      "version": "0.0.x"
     }
   },
   "requiredCapabilities": [
