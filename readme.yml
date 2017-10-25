@@ -1,0 +1,95 @@
+repo: watson-discovery-news-alerting
+
+title: Watson Discovery News Alerting
+
+description: |
+  In this developer journey, we will build a Node.js web application that will
+  use the Watson Discovery Service to access Watson Discovery News.
+
+  Watson Discovery News is a default data collection that is associated with
+  the Watson Discovery Service. It is a dataset of primarily English language
+  news sources that is updated continuously, with approximately 300,000 new
+  articles and blogs added daily.
+
+  The focus of this journey is to monitor a product's marketplace life-cycle
+  using Watson's Discovery service to intelligently alert when a product's
+  stance in the marketplace has changed. Users can recieve periodic email
+  alerts about a product or brand and how they're perceived in the News.
+
+  Alert tracking can be set up for the following areas:
+
+  * The product
+  * The brand
+  * Related products and brands
+  * Positive or negative product sentiment
+  * Stock prices
+
+  The journey highlights the steps required to build a front-end management
+  interface to search Watson News and a back-end service which periodically
+  sends alerts out related to customizable queries.
+
+flow:
+  - |
+    The user interacts with the backend server via the app UI. The frontend
+    app UI uses React to render search results and can reuse all of the views
+    that are used by the backend for server side rendering. The frontend is
+    using watson-react-components and is responsive.
+
+  - |
+    User input is processed and routed to the backend server, which is
+    responsible for server side rendering of the views to be displayed on the
+    browser. The backend server is written using express and uses
+    express-react-views engine to render views written using React.
+
+  - |
+    The backend server stores subscription information in a Cloudant NonSQL
+    database for product tracking.
+
+  - |
+    The backend server sends user requests to the Watson Discovery Service. It
+    acts as a proxy server, forwarding queries from the frontend to the Watson
+    Discovery Service API while keeping sensitive API keys concealed from the
+    user.
+
+  - |
+    The Watson Discovery Service queries the Watson News Collection for
+    articles related to the product.
+
+  - |
+    The backend server sends periodic updates to email.
+
+with_watson: true
+
+components:
+  - discovery
+  - cloudant
+
+technologies:
+  - node.js
+  - react
+  - express
+  - yarn
+
+youtube_id: zFl-2FybDdY
+
+steps:
+  - |
+    Clone the repo
+
+    Clone the `watson-discovery-news-alerting` locally. In a terminal, run:
+
+    ```
+    $ git clone https://github.com/ibm/watson-discovery-news-alerting
+    ```
+
+  - |
+    Create Watson Services with IBM Bluemix
+
+    Create the following service:
+
+    * [**Watson
+      Discovery**](https://console.ng.bluemix.net/catalog/services/discovery) -
+      name the service `wdna-discovery`
+    * [**Cloudant NoSQL
+      DB**](https://console.bluemix.net/catalog/services/cloudant-nosql-db) -
+      name the service `wdna-cloudant`

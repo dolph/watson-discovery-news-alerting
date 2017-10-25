@@ -1,0 +1,62 @@
+[![Build Status](https://travis-ci.org/IBM/{{ repo }}.svg?branch=master)](https://travis-ci.org/IBM/{{ repo }})
+
+# {{ title }}
+
+{{ description }}
+![](https://raw.githubusercontent.com/dolph/watson-discovery-news-alerting/master/doc/source/images/architecture.png)
+
+## Flow
+{% for step in flow -%}
+1. {{ step -}}
+{%- endfor -%}
+
+{% if with_watson %}
+## With Watson
+Want to take your Watson app to the next level? Looking to leverage Watson Brand assets? Join the [With Watson](https://www.ibm.com/watson/with-watson) program which provides exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
+{%- endif %}
+
+# Included components
+
+{% for component in components %}
+{%- if component == 'discovery' -%}
+* [Watson Discovery](https://www.ibm.com/watson/developercloud/discovery.html): A cognitive search and content analytics engine for applications to identify patterns, trens, and actionable insights.
+{%- elif component == 'cloudant' %}
+* [Cloudant NoSQL DB for Bluemix](https://console.bluemix.net/docs/services/Cloudant/cloudant.html#overview): A fully managed data layer designed for modern web and mobile applications that leverages a flexible JSON schema.
+{%- endif %}
+{%- endfor %}
+
+# Featured technologies
+
+{% for tech in technologies %}
+{%- if tech == 'node.js' -%}
+* [Node.js](https://nodejs.org/en/) - An asynchronous event driven JavaScript runtime, designed to build scalable applications
+{%- elif tech == 'react' %}
+* [React](https://facebook.github.io/react/) - Javascript library for building User Interfaces
+{%- elif tech == 'express' %}
+* [Express](https://expressjs.com) - A popular and minimalistic web framework for creating API and Web server
+{%- elif tech == 'yarn' %}
+* [Yarn](https://yarnpkg.com) - Fast, reliable and secure dependency manager for node.js
+{%- endif %}
+{%- endfor %}
+
+# Watch the Video
+
+[![](https://img.youtube.com/vi/{{ youtube_id }}/maxresdefault.jpg)](https://youtu.be/{{ youtube_id }})
+
+# Steps
+
+{% for step in steps -%}
+1. [{{ step.splitlines()[0] }}](#{{- step.splitlines()[0].lower().replace(' ', '-') }})
+{% endfor %}
+
+{% for step in steps %}
+## {{ step -}}
+{% endfor %}
+
+# Sample output
+
+![](https://raw.githubusercontent.com/dolph/watson-discovery-news-alerting/master/doc/source/images/sample-output.png)
+
+# License
+
+[Apache 2.0](LICENSE)
