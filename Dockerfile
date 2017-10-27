@@ -1,6 +1,6 @@
 FROM ibmcom/ibmnode
 
-ADD . /app
+ADD app /app
 
 ENV NODE_ENV production
 ENV PORT 3000
